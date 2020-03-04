@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: yanfa:8848
+        namespace: public
+  application:
+    name: order-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://140.143.161.107:3306/learn?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: zhaofapwd-
+server:
+  port: 8081
+  error:
+    path: /order
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/*.xml
+  type-aliases-package: cn.wwtianmei.qingyun.order.entity
