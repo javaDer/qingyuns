@@ -16,6 +16,7 @@
     <packaging>pom</packaging>
     <modules>
        <module>qingyun-order</module>
+       <module>qingyun-product</module>
 
     </modules>
     <properties>

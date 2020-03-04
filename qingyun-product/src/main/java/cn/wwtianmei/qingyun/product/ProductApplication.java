@@ -1,5 +1,4 @@
-package cn.wwtianmei.qingyun.order;
-
+package cn.wwtianmei.qingyun.product;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -9,13 +8,13 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 /**
  * @author zhaofa
  */
-@SpringBootApplication
 @EnableDiscoveryClient
-@MapperScan("cn.wwtianmei.qingyun.order.dao")
-public class OrderApplication {
+@SpringBootApplication
+@MapperScan("cn.wwtianmei.qingyun.product.dao")
+public class ProductApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(OrderApplication.class, args);
+        SpringApplication.run(ProductApplication.class, args);
     }
 
 }
