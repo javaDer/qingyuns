@@ -1,7 +1,6 @@
 package cn.wwtianmei.qingyun.product.api.service;
 
-import cn.wwtianmei.qingyun.product.api.entity.PmsProduct;
-import org.apache.dubbo.config.annotation.Service;
+import cn.wwtianmei.qingyun.product.api.entity.PmsProductDto;
 
 import java.util.List;
 
@@ -11,7 +10,7 @@ import java.util.List;
  * @author makejava
  * @since 2020-03-05 00:17:23
  */
-public interface PmsProductService {
+public interface ProductService {
 
     /**
      * 通过ID查询单条数据
@@ -19,7 +18,7 @@ public interface PmsProductService {
      * @param id 主键
      * @return 实例对象
      */
-    PmsProduct queryById(Long id);
+    PmsProductDto queryById(Long id);
 
     /**
      * 查询多条数据
@@ -28,7 +27,7 @@ public interface PmsProductService {
      * @param limit 查询条数
      * @return 对象列表
      */
-    List<PmsProduct> queryAllByLimit(int offset, int limit);
+    List<PmsProductDto> queryAllByLimit(int offset, int limit);
 
     /**
      * 新增数据
@@ -36,7 +35,7 @@ public interface PmsProductService {
      * @param pmsProduct 实例对象
      * @return 实例对象
      */
-    PmsProduct insert(PmsProduct pmsProduct);
+    PmsProductDto insert(PmsProductDto pmsProduct);
 
     /**
      * 修改数据
@@ -44,7 +43,7 @@ public interface PmsProductService {
      * @param pmsProduct 实例对象
      * @return 实例对象
      */
-    PmsProduct update(PmsProduct pmsProduct);
+    PmsProductDto update(PmsProductDto pmsProduct);
 
     /**
      * 通过主键删除数据

@@ -35,7 +35,7 @@ public class SwaggerConfiguration {
     public Docket defaultApi2() {
         Docket docket=new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
-                .groupName("2.X版本")
+                .groupName("v1.0版本")
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("cn.wwtianmei.qingyun.order.controller"))
                 //.apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
@@ -68,10 +68,10 @@ public class SwaggerConfiguration {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("swagger-bootstrap-ui-demo RESTful APIs")
+                .title("learn-青云计划API")
                 .description("# swagger-bootstrap-ui-demo RESTful APIs")
                 .termsOfServiceUrl("http://www.xx.com/")
-                .contact("xx@qq.com")
+                .contact("fa20091001@163.com.com")
                 .version("1.0")
                 .build();
     }

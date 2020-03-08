@@ -3,7 +3,6 @@ package cn.wwtianmei.qingyun.order.service.impl;
 import cn.wwtianmei.qingyun.order.entity.OmsOrder;
 import cn.wwtianmei.qingyun.order.dao.OmsOrderDao;
 import cn.wwtianmei.qingyun.order.service.OmsOrderService;
-import cn.wwtianmei.qingyun.product.api.service.PmsProductService;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.stereotype.Service;
 

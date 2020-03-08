@@ -2,13 +2,15 @@ package cn.wwtianmei.qingyun.order.controller;
 
 import cn.wwtianmei.qingyun.order.entity.OmsOrder;
 import cn.wwtianmei.qingyun.order.service.OmsOrderService;
-import cn.wwtianmei.qingyun.product.api.entity.PmsProduct;
-import cn.wwtianmei.qingyun.product.api.service.PmsProductService;
+import cn.wwtianmei.qingyun.product.api.entity.PmsProductDto;
+import cn.wwtianmei.qingyun.product.api.service.ProductService;
 import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.dubbo.config.annotation.Reference;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
@@ -20,7 +22,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("omsOrder")
-@Api(tags = "2.0.2版本-20200226",position = 286)
+@Api(tags = "订单API")
 public class OmsOrderController {
     /**
      * 服务对象
@@ -28,7 +30,7 @@ public class OmsOrderController {
     @Resource
     private OmsOrderService omsOrderService;
     @Reference
-    private PmsProductService pmsProductService;
+    private ProductService pmsProductService;
 
     /**
      * 通过主键查询单条数据
@@ -38,7 +40,7 @@ public class OmsOrderController {
      */
     @GetMapping("/selectOne")
     @ApiOperationSupport(ignoreParameters = "ids")
-    @ApiOperation(value = "忽略参数值-Form类型")
+    @ApiOperation(value = "根据id查询订单")
     public OmsOrder selectOne(Long id) {
         return this.omsOrderService.queryById(id);
     }
@@ -46,7 +48,7 @@ public class OmsOrderController {
     @GetMapping("/selectOneProduct")
     @ApiOperationSupport(ignoreParameters = "ids")
     @ApiOperation(value = "查询Product")
-    public PmsProduct selectOneProduct(Long id) {
+    public PmsProductDto selectOneProduct(Long id) {
         return pmsProductService.queryById(id);
     }
 

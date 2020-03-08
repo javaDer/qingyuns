@@ -1,10 +1,10 @@
-package cn.wwtianmei.qingyun.product.service;
+package cn.wwtianmei.qingyun.product.service.impl;
 
-import cn.wwtianmei.qingyun.product.api.entity.PmsProduct;
-import cn.wwtianmei.qingyun.product.api.service.PmsProductService;
+import cn.wwtianmei.qingyun.product.service.PmsProductService;
 import cn.wwtianmei.qingyun.product.dao.PmsProductDao;
-import org.apache.dubbo.config.annotation.Service;
+import cn.wwtianmei.qingyun.product.entity.PmsProduct;
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;

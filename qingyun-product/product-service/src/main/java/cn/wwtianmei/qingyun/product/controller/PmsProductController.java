@@ -1,9 +1,12 @@
 package cn.wwtianmei.qingyun.product.controller;
 
-import cn.wwtianmei.qingyun.product.api.service.PmsProductService;
+import cn.wwtianmei.qingyun.product.api.entity.PmsProductDto;
 import cn.wwtianmei.qingyun.product.entity.PmsProduct;
+import cn.wwtianmei.qingyun.product.service.PmsProductService;
 import org.springframework.beans.BeanUtils;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
@@ -31,7 +34,7 @@ public class PmsProductController {
     @GetMapping("selectOne")
     public PmsProduct selectOne(Long id) {
         PmsProduct pmsProducts = new PmsProduct();
-        cn.wwtianmei.qingyun.product.api.entity.PmsProduct pmsProduct = this.pmsProductService.queryById(id);
+        PmsProduct pmsProduct = this.pmsProductService.queryById(id);
         BeanUtils.copyProperties(pmsProduct,pmsProducts);
         return pmsProducts;
     }

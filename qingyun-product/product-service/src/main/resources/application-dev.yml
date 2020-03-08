@@ -20,7 +20,7 @@ mybatis-plus:
   type-aliases-package: cn.wwtianmei.qingyun.order.entity
 dubbo:
   scan:
-    base-packages: cn.wwtianmei.qingyun.product.service
+    base-packages: cn.wwtianmei.qingyun.product.provider
   protocols:
     dubbo:
       name: dubbo

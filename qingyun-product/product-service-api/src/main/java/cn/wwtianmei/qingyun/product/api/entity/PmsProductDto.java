@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @author makejava
  * @since 2020-03-05 00:17:23
  */
-public class PmsProduct implements Serializable {
+public class PmsProductDto implements Serializable {
     private static final long serialVersionUID = 133265320989526307L;
     
     private Long id;
