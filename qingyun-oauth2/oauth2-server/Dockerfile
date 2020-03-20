@@ -6,4 +6,4 @@ RUN sh -c 'touch /oauth.jar'
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN echo 'Asia/Shanghai' > /etc/timezone
 EXPOSE 8080
-ENTRYPOINT [ "sh", "-c", "java -Xms$Xms -Xmx$Xmx -Djava.security.egd=file:/dev/./urandom -jar /oauth.jar" ]
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/oauth.jar","> /log/app.log"]
