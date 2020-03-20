@@ -3,5 +3,4 @@ MAINTAINER zhangzhaofa <fa20091001@gmail.com>
 VOLUME /tmp
 ADD /target/oauth2-server-0.0.1.jar oauth.jar
 EXPOSE 8080
-RUN bash -c "touch /oauth.jar"
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/oauth.jar","> /log/app.log"]
