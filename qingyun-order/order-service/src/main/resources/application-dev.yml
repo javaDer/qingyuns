@@ -10,19 +10,13 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 #    url: jdbc:mysql://140.143.161.107:3306/mail?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
-    url: jdbc:mysql://192.168.0.58:3306/mall?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://192.168.0.58:3306/mall?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
     password: Q1w2e3r4t5-
   main:
     allow-bean-definition-overriding: true
 server:
   port: 8081
-  undertow:
-    accesslog:
-      enabled: true
-      prefix: access_log
-      suffix: log
-      pattern: common
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*.xml
@@ -35,3 +29,6 @@ dubbo:
     subscribed-services: product-service
   provider:
     serialization: kryo
+logging:
+  level:
+    org.springframework.cloud.sleuth: debug

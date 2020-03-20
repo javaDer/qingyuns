@@ -4,33 +4,22 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>cn.wwtianmei</groupId>
-        <artifactId>qingyun-product</artifactId>
-        <version>0.0.1</version>
-    </parent>
-    <artifactId>product-service</artifactId>
+        <artifactId>qingyun-oauth2</artifactId>
     <version>0.0.1</version>
+    </parent>
+    <artifactId>oauth2-server</artifactId>
+    <version>0.0.1</version>
+    <name>oauth2-server</name>
     <description>Demo project for Spring Boot</description>
-    <name>product-service</name>
+    <packaging>jar</packaging>
 
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
+        <knife4j.version>2.0.1</knife4j.version>
     </properties>
 
     <dependencies>
-        <!--        API-->
-        <dependency>
-            <groupId>cn.wwtianmei</groupId>
-            <artifactId>product-service-api</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.dubbo/dubbo-serialization-kryo -->
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-serialization-kryo</artifactId>
-            <version>2.7.4</version>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -46,12 +35,16 @@
             <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
+        </dependency>
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -59,11 +52,13 @@
         </dependency>
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-spring-ui</artifactId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>${knife4j.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>swagger-bootstrap-ui</artifactId>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -76,14 +71,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-dubbo</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
@@ -92,6 +79,24 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>cn.wwtianmei.qingyun.oauth2.server.OAuth2ServerApplication</mainClass>
+                </configuration>
+            </plugin>
+        <plugin>
+            <groupId>com.spotify</groupId>
+            <artifactId>dockerfile-maven-plugin</artifactId>
+            <version>1.3.6</version>
+            <configuration>
+                <repository>${parent.artifactId}/${project.artifactId}</repository>
+                <buildArgs>
+                    <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
+                </buildArgs>
+            </configuration>
+        </plugin>
         </plugins>
     </build>
 
