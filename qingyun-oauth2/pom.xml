@@ -20,7 +20,6 @@
     </properties>
     <modules>
         <module>oauth2-server</module>
-<!--        <module>order-service-api</module>-->
     </modules>
 
 </project>

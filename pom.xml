@@ -38,6 +38,16 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.zipkin.brave</groupId>-->
+<!--            <artifactId>brave-instrumentation-dubbo-rpc</artifactId>-->
+<!--            <version>5.6.6</version>-->
+<!--        </dependency>-->
+        <!-- zipkin支持dubbo -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-zipkin</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>

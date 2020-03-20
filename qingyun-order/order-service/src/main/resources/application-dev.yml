@@ -17,12 +17,6 @@ spring:
     allow-bean-definition-overriding: true
 server:
   port: 8081
-  undertow:
-    accesslog:
-      enabled: true
-      prefix: access_log
-      suffix: log
-      pattern: common
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*.xml
@@ -35,3 +29,6 @@ dubbo:
     subscribed-services: product-service
   provider:
     serialization: kryo
+logging:
+  level:
+    org.springframework.cloud.sleuth: debug
