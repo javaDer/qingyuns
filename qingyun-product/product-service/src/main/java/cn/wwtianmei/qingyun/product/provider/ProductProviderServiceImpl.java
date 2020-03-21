@@ -1,7 +1,7 @@
 package cn.wwtianmei.qingyun.product.provider;
 
 import cn.wwtianmei.qingyun.product.api.entity.PmsProductDto;
-import cn.wwtianmei.qingyun.product.api.service.ProductService;
+import cn.wwtianmei.qingyun.product.api.service.ProductServiceApi;
 import cn.wwtianmei.qingyun.product.dao.PmsProductDao;
 import cn.wwtianmei.qingyun.product.entity.PmsProduct;
 import org.apache.dubbo.config.annotation.Service;
@@ -9,7 +9,7 @@ import org.springframework.beans.BeanUtils;
 
 import java.util.List;
 @Service
-public class ProductProviderServiceImpl implements ProductService {
+public class ProductProviderServiceImpl implements ProductServiceApi {
     public final PmsProductDao pmsProductDao;
 
     public ProductProviderServiceImpl(PmsProductDao pmsProductDao) {

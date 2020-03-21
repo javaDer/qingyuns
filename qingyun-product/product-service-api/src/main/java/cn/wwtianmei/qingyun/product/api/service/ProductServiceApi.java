@@ -10,7 +10,7 @@ import java.util.List;
  * @author makejava
  * @since 2020-03-05 00:17:23
  */
-public interface ProductService {
+public interface ProductServiceApi {
 
     /**
      * 通过ID查询单条数据

@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @since 2020-03-05 00:08:31
  */
 @Data
-public class OmsOrder implements Serializable {
+public class OmsOrderDto implements Serializable {
     private static final long serialVersionUID = -85956612893194259L;
     /**
     * 订单id

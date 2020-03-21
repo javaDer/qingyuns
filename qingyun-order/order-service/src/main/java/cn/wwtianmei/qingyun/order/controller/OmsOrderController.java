@@ -3,7 +3,7 @@ package cn.wwtianmei.qingyun.order.controller;
 import cn.wwtianmei.qingyun.order.entity.OmsOrder;
 import cn.wwtianmei.qingyun.order.service.OmsOrderService;
 import cn.wwtianmei.qingyun.product.api.entity.PmsProductDto;
-import cn.wwtianmei.qingyun.product.api.service.ProductService;
+import cn.wwtianmei.qingyun.product.api.service.ProductServiceApi;
 import com.github.xiaoymin.knife4j.annotations.ApiOperationSupport;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -30,11 +30,11 @@ public class OmsOrderController {
     @Resource
     private OmsOrderService omsOrderService;
     @Reference
-    private ProductService pmsProductService;
+    private ProductServiceApi pmsProductService;
 
     /**
      * 通过主键查询单条数据
-     *
+     *f
      * @param id 主键
      * @return 单条数据
      */
