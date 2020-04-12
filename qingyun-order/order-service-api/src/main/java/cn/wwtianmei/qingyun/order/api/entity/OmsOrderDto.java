@@ -186,4 +186,6 @@ public class OmsOrderDto implements Serializable {
     * 修改时间
     */
     private Date modifyTime;
+
+    private String productId;
 }

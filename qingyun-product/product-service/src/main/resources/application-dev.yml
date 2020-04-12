@@ -21,6 +21,23 @@ spring:
     url: jdbc:mysql://192.168.0.58:3306/mall?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
     password: Q1w2e3r4t5-
+  rabbitmq:
+    host: 192.168.0.58
+    virtual-host: /product
+    port: 5672
+    username: user
+    password: user
+  redis:
+    database: 0
+    host: 192.168.0.58
+    port: 6379
+    jedis:
+      pool:
+        max-active: 200
+        max-wait: -1
+        max-idle: 10
+        min-idle: 0
+    timeout: 1000
 mybatis-plus:
   mapper-locations: classpath*:/mapper/*.xml
   type-aliases-package: cn.wwtianmei.qingyun.product.entity
@@ -37,3 +54,12 @@ dubbo:
 logging:
   level:
     org.springframework.cloud.sleuth: debug
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      enabled: true
+      show-details: always

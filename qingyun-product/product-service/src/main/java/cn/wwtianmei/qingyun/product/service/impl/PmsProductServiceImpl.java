@@ -1,8 +1,9 @@
 package cn.wwtianmei.qingyun.product.service.impl;
 
-import cn.wwtianmei.qingyun.product.service.PmsProductService;
-import cn.wwtianmei.qingyun.product.dao.PmsProductDao;
 import cn.wwtianmei.qingyun.product.entity.PmsProduct;
+import cn.wwtianmei.qingyun.product.mapper.PmsProductmapper;
+import cn.wwtianmei.qingyun.product.service.PmsProductService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -16,9 +17,9 @@ import java.util.List;
  * @since 2020-03-05 00:17:23
  */
 @Service
-public class PmsProductServiceImpl implements PmsProductService {
+public class PmsProductServiceImpl extends ServiceImpl<PmsProductmapper,PmsProduct> implements PmsProductService {
     @Resource
-    private PmsProductDao pmsProductDao;
+    private PmsProductmapper pmsProductDao;
 
     @Override
     public PmsProduct queryById(Long id) {

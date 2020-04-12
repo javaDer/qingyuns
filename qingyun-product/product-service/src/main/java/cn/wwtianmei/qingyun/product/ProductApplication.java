@@ -10,7 +10,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @EnableDiscoveryClient
 @SpringBootApplication
-@MapperScan("cn.wwtianmei.qingyun.product.dao")
+@MapperScan("cn.wwtianmei.qingyun.product.mapper")
 public class ProductApplication {
 
     public static void main(String[] args) {
