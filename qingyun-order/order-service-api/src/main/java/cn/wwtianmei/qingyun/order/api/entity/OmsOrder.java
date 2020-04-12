@@ -2,8 +2,8 @@ package cn.wwtianmei.qingyun.order.api.entity;
 
 import lombok.Data;
 
-import java.util.Date;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 订单表(OmsOrder)实体类

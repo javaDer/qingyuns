@@ -2,6 +2,7 @@ package cn.wwtianmei.qingyun.product.service;
 
 
 import cn.wwtianmei.qingyun.product.entity.PmsProduct;
+import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
  * @author makejava
  * @since 2020-03-05 00:17:23
  */
-public interface PmsProductService {
+public interface PmsProductService  extends IService<PmsProduct> {
 
     /**
      * 通过ID查询单条数据

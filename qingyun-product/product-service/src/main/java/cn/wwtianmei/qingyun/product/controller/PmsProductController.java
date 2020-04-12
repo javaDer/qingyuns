@@ -1,6 +1,5 @@
 package cn.wwtianmei.qingyun.product.controller;
 
-import cn.wwtianmei.qingyun.product.api.entity.PmsProductDto;
 import cn.wwtianmei.qingyun.product.entity.PmsProduct;
 import cn.wwtianmei.qingyun.product.service.PmsProductService;
 import org.springframework.beans.BeanUtils;
@@ -38,5 +37,4 @@ public class PmsProductController {
         BeanUtils.copyProperties(pmsProduct,pmsProducts);
         return pmsProducts;
     }
-
 }
