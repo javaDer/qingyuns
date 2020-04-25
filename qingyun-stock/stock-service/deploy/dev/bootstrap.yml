@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: stock-service
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.0.58:8848
+        file-extension: properties
+        group: DEFAULT_GROUP
+        refresh-enabled: true
+server:
+  port: 8083
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+      enabled: true
+    shutdown:
+      enabled: false
+    consul:
+      enabled: true

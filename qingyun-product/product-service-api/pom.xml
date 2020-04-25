@@ -7,20 +7,20 @@
         <artifactId>learn-qingyuns</artifactId>
         <version>0.0.1</version>
     </parent>
-    <artifactId>qingyun-order</artifactId>
+    <artifactId>product-service-api</artifactId>
     <version>0.0.1</version>
-    <packaging>pom</packaging>
-    <name>qingyun-order</name>
     <description>Demo project for Spring Boot</description>
+    <name>product-service-api</name>
 
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
-        <knife4j.version>2.0.1</knife4j.version>
     </properties>
-    <modules>
-        <module>order-service</module>
-        <module>order-service-api</module>
-    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-dubbo</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
